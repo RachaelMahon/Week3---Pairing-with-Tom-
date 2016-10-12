@@ -2,7 +2,7 @@ require 'player'
 
   describe Player do
     subject(:buddy) {Player.new('Buddy')}
-    subject(:ginger_cat) {Player.new('ginger_cat')}
+    subject(:ginger) {Player.new('Ginger')}
 
     describe '#name' do
       it 'returns the name' do
@@ -18,8 +18,8 @@ require 'player'
 
     context '#attack' do
       it 'can be attacked' do
-        expect(ginger_cat).to receive(:receive_damage)
-        buddy.attack(ginger_cat)
+        expect(ginger).to receive(:receive_damage)
+        buddy.attack(ginger)
       end
     end
 
