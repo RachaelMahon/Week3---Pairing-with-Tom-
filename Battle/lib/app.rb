@@ -11,30 +11,30 @@ class Battle < Sinatra::Base
   end
 
 post '/names' do
-  $game = Game.new(params[:player1],params[:player2])
+  Game.store = Game.new(params[:player1],params[:player2])
   redirect '/play'
 end
 
 get '/play' do
-  @game = $game
+  @game = Game.store
   erb(:play)
 end
 
 get '/attack' do
-  @game = $game
+  @game = Game.store
   @game.attack(@game.not_turn)
   erb :attack
 end
 
 post '/switch_turn' do
-  @game = $game
+  @game = Game.store
   redirect '/game_over' if @game.game_over_check?
   @game.switch_turn
   redirect '/play'
 end
 
 get '/game_over' do
-  @game = $game
+  @game = Game.store
  erb(:game_over)
 end
 
