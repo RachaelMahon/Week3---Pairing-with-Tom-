@@ -1,13 +1,117 @@
-<div class="Header" style="text-align:center"><h1>Battle</h1></div>
 
-<div class="Versus" style="text-align:center"><h2><%=@game.player1.name%> vs. <%=@game.player2.name%></h2></div>
 
-<div class="hp1" style="text-align:left"><h4><%=@game.player1.name%> - <%=@game.player1.hit_points%> - HP</h4>
 
-  <div class="hp2" style="text-align:right"><h4><%=@game.player2.name%> - <%=@game.player2.hit_points%> - HP</h4>
+
+
 
 </div>
 
-<form action="/attack">
-  <input type="submit" value="Attack!">
-</form>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {background: url(http://67.media.tumblr.com/2be65f8583e1e18087ad85584dcd5d43/tumblr_n45c41S79J1qhu3vxo1_500.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;}
+h1   {text-align: center; color: #00ffff; font-family: "Brush Script MT", cursive;
+	font-size: 80px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px; }
+h2   {text-align: center; color: lime; font-family: "Brush Script MT", cursive;
+  	font-size: 45px;
+  	font-style: normal;
+  	font-variant: normal;
+  	font-weight: 400;
+  	line-height: 20px; }
+p    {color: black; font-family: "Brush Script MT", cursive;
+	font-size: 30px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;  }
+img {  height: auto;
+    width: auto;
+    max-width: 350px;
+    max-height: 350px;}
+input[type=submit] {display: inline-block;
+     padding: 15px 25px;
+     font-size: 24px;
+     cursor: pointer;
+     text-align: center;
+     text-decoration: none;
+     outline: none;
+     color: black;
+     background-color: yellow;
+     border: none;
+     border-radius: 15px;
+     box-shadow: 0 9px #999;}
+
+    input[type=submit]:hover {background-color: lime}
+
+    input[type=submit]:active {
+     background-color: #3e8e41 ;
+     box-shadow: 0 5px #666;
+     transform: translateY(4px);
+    }
+
+
+button {
+  color: #6496c8;
+  background: rgba(0,0,0,0);
+  border: solid 5px #6496c8;
+}
+
+
+</style>
+</head>
+
+<br>
+<body>
+
+<br>
+  <h4 style="text-align:left;">
+      <img src="http://static.tumblr.com/c2b5e829258bd36f86c95e34dbb13ef5/2ns4yj3/KDWnmn4re/tumblr_static_dre79we73604044k408g4w8c0.gif" />
+      <span style="float:right;"><img src="https://i.imgur.com/HBCO7U0.gif
+        " /></span>
+  </h4>
+
+<br>
+
+  <p style="text-align:left;">
+<%=@game.player1.name%> - <%=@game.player1.hit_points%> - HP
+<span style="float:right;"><%=@game.player2.name%> - <%=@game.player2.hit_points%> - HP</span>
+</p>
+
+    <form action="/attack">
+      <input type="submit" value="Attack!" style="float: left;">
+    </form="">
+
+
+
+    <form action="/attack">
+      <input type="submit" value="Attack!" style="float: right;">
+    </form>
+
+
+
+
+
+
+  </body>
+    <div class="Header" style="text-align:center" vertical-align="bottom"><h1>Dino Battle</h1></div>
+    <div class="Versus" style="text-align:center"><h2><%=@game.player1.name%> vs. <%=@game.player2.name%></h2></div>
+
+
+    <h4 style="text-align:center;">
+        <img src="https://media.giphy.com/media/p6ASvbHlX9WBq/giphy.gif" />
+
+    </h4>
+
+</html>
