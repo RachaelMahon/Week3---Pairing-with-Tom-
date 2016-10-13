@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'views/player'
+require_relative 'views/game'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -10,23 +11,33 @@ class Battle < Sinatra::Base
   end
 
 post '/names' do
-  $playerone = Player.new(params[:player1])
-  $playertwo = Player.new(params[:player2])
+  $game = Game.new(params[:player1],params[:player2])
   redirect '/play'
 end
 
 get '/play' do
-  @player1 = $playerone
-  @player2 = $playertwo
+  @game = $game
   erb(:play)
 end
 
 get '/attack' do
-  @player1 = $playerone
-  @player2 = $playertwo
-  @player1.attack(@player2)
+  @game = $game
+  @game.attack(@game.not_turn)
   erb :attack
 end
+
+post '/switch_turn' do
+  @game = $game
+  redirect '/game_over' if @game.game_over_check?
+  @game.switch_turn
+  redirect '/play'
+end
+
+get '/game_over' do
+  @game = $game
+ erb(:game_over)
+end
+
 
   run! if app_file == $0
 end

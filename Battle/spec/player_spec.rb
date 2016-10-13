@@ -1,4 +1,5 @@
-require 'player'
+require 'views/player'
+
 
   describe Player do
     subject(:buddy) {Player.new('Buddy')}
@@ -13,13 +14,6 @@ require 'player'
     context '#hit_points' do
       it 'returns the hit points' do
         expect(buddy.hit_points).to eq described_class::DEFAULT_HIT_POINTS
-      end
-    end
-
-    context '#attack' do
-      it 'can be attacked' do
-        expect(ginger).to receive(:receive_damage)
-        buddy.attack(ginger)
       end
     end
 

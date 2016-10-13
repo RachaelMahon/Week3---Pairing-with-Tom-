@@ -1,2 +1,8 @@
-<%=$playerone.name%> attacked <%=$playertwo.name%>
-<%=@player2%> lost 10 Hit points!
+<%=@game.turn.name%> attacked <%=@game.not_turn.name%> <br>
+<%=@game.not_turn.name%> lost <%=Player::DEFAULT_DAMAGE%> Hit points! <br>
+<%=@game.not_turn.name%> has <%=@game.not_turn.hit_points%> remaining Hit points!
+
+
+<form action="/switch_turn" method='post'>
+  <input type="submit" value="Continue!">
+</form>
